@@ -1,0 +1,6 @@
+CREATE TABLE budget (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(20),
+    amount DECIMAL(10,2),
+    category VARCHAR(100)
+);
