@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
 include 'db.php';
 
 $name = "";
@@ -48,7 +55,8 @@ $result = mysqli_query($conn, "SELECT * FROM members");
 <a href="members.php">Members</a> |
 <a href="events.php">Events</a> |
 <a href="attendance.php">Attendance</a> |
-<a href="budget.php">Budget</a>
+<a href="budget.php">Budget</a> |
+<a href="logout.php">Logout</a>
 <hr>
 
 <h2>Members</h2>
