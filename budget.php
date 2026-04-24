@@ -1,7 +1,13 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
 include 'db.php';
 
-// Insert
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $type = $_POST['type'];
     $amount = $_POST['amount'];
@@ -11,26 +17,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     VALUES ('$type', $amount, '$category')");
 }
 
-// Delete
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     mysqli_query($conn, "DELETE FROM budget WHERE id=$id");
 }
 
-// Get all budget records
 $result = mysqli_query($conn, "SELECT * FROM budget");
 
-// Calculate total income
 $income_result = mysqli_query($conn, "SELECT SUM(amount) AS total_income FROM budget WHERE type='Income'");
 $income_row = mysqli_fetch_assoc($income_result);
 $total_income = $income_row['total_income'] ? $income_row['total_income'] : 0;
 
-// Calculate total expense
 $expense_result = mysqli_query($conn, "SELECT SUM(amount) AS total_expense FROM budget WHERE type='Expense'");
 $expense_row = mysqli_fetch_assoc($expense_result);
 $total_expense = $expense_row['total_expense'] ? $expense_row['total_expense'] : 0;
 
-// Calculate current balance
 $current_balance = $total_income - $total_expense;
 ?>
 
@@ -38,7 +39,8 @@ $current_balance = $total_income - $total_expense;
 <a href="members.php">Members</a> |
 <a href="events.php">Events</a> |
 <a href="attendance.php">Attendance</a> |
-<a href="budget.php">Budget</a>
+<a href="budget.php">Budget</a> |
+<a href="logout.php">Logout</a>
 <hr>
 
 <h2>Budget</h2>
