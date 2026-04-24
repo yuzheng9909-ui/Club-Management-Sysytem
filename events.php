@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
 include 'db.php';
 
 $event_name = "";
@@ -17,9 +24,7 @@ elseif ($_SERVER["REQUEST_METHOD"] == "POST") {
     $event_name = $_POST['event_name'];
     $event_date = $_POST['event_date'];
 
-    mysqli_query($conn, "INSERT INTO events (event_name, event_date) VALUES ('$event_name', '$event_date')")
-        or die(mysqli_error($conn));
-
+    mysqli_query($conn, "INSERT INTO events (event_name, event_date) VALUES ('$event_name', '$event_date')");
     echo "<p>Event added successfully.</p>";
 }
 
@@ -46,7 +51,8 @@ $result = mysqli_query($conn, "SELECT * FROM events");
 <a href="members.php">Members</a> |
 <a href="events.php">Events</a> |
 <a href="attendance.php">Attendance</a> |
-<a href="budget.php">Budget</a>
+<a href="budget.php">Budget</a> |
+<a href="logout.php">Logout</a>
 <hr>
 
 <h2>Events</h2>
