@@ -1,7 +1,13 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
+
 include 'db.php';
 
-// Insert attendance
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $member_id = $_POST['member_id'];
     $event_id = $_POST['event_id'];
@@ -9,19 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_query($conn, "INSERT INTO attendance (member_id, event_id) VALUES ($member_id, $event_id)");
 }
 
-// Delete attendance
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     mysqli_query($conn, "DELETE FROM attendance WHERE id=$id");
 }
 
-// Get members
 $members = mysqli_query($conn, "SELECT * FROM members");
-
-// Get events
 $events = mysqli_query($conn, "SELECT * FROM events");
 
-// Get attendance with JOIN
 $result = mysqli_query($conn, "
     SELECT attendance.id, members.name, events.event_name
     FROM attendance
@@ -34,7 +35,8 @@ $result = mysqli_query($conn, "
 <a href="members.php">Members</a> |
 <a href="events.php">Events</a> |
 <a href="attendance.php">Attendance</a> |
-<a href="budget.php">Budget</a>
+<a href="budget.php">Budget</a> |
+<a href="logout.php">Logout</a>
 <hr>
 
 <h2>Attendance</h2>
@@ -43,18 +45,14 @@ $result = mysqli_query($conn, "
     Member:
     <select name="member_id">
         <?php while ($m = mysqli_fetch_assoc($members)) { ?>
-            <option value="<?php echo $m['id']; ?>">
-                <?php echo $m['name']; ?>
-            </option>
+            <option value="<?php echo $m['id']; ?>"><?php echo $m['name']; ?></option>
         <?php } ?>
     </select>
 
     Event:
     <select name="event_id">
         <?php while ($e = mysqli_fetch_assoc($events)) { ?>
-            <option value="<?php echo $e['id']; ?>">
-                <?php echo $e['event_name']; ?>
-            </option>
+            <option value="<?php echo $e['id']; ?>"><?php echo $e['event_name']; ?></option>
         <?php } ?>
     </select>
 
