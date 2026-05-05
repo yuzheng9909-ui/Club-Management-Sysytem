@@ -1,0 +1,273 @@
+/*
+
+	Coffeelike by nodethirtythree + Templated.org
+	http://templated.org/ | @templatedorg
+	Released under the Creative Commons Attribution 3.0 License.
+	Modified for a Club Management System student project.
+	
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #1495ff;
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-size: 12pt;
+	line-height: 1.75em;
+	font-family: Georgia, serif;
+	background: #ad8667;
+	color: #ebe1d9;
+}
+
+br.clear {
+	clear: both;
+}
+
+h1,h2,h3,h4 {
+	text-transform: lowercase;
+	letter-spacing: -1px;
+}
+
+h2,h3,h4 {
+	margin-bottom: 1em;
+	font-family: Arvo, serif;
+	color: #fff;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+ul {
+	margin-bottom: 1.5em;
+}
+
+.imageList {
+	list-style: none;
+}
+
+.imageList li {
+	clear: both;
+}
+
+#bg {
+	background: #ad8667;
+}
+
+#box1 {
+	width: 745px;
+	overflow: hidden;
+	margin: 0 0 35px 0;
+}
+
+#box2 {
+	width: 355px;
+	overflow: hidden;
+	float: left;
+}
+
+#box3 {
+	width: 355px;
+	overflow: hidden;
+	margin: 0 0 0 390px;
+}
+
+#box4, #box5 {
+	width: 745px;
+	overflow: hidden;
+	margin: 30px 0 0 0;
+	padding-top: 25px;
+	border-top: dotted 1px #b3b3b3;
+}
+
+#content {
+	width: 745px;
+	margin: 0 0 0 355px;
+	padding: 40px;
+	background: #fff;
+}
+
+#copyright {
+	padding: 0 0 80px 0;
+	text-align: center;
+	color: #D8C2AB;
+}
+
+#copyright a {
+	color: #D8C2AB;
+}
+
+#header {
+	position: relative;
+	padding: 40px;
+	height: 120px;
+}
+
+#logo {
+	position: absolute;
+	top: 40px;
+	left: 40px;
+	height: 120px;
+	line-height: 120px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#logo h1 {
+	font-size: 3.5em;
+	font-family: Lobster, cursive;
+	text-shadow: 0 2px 1px #32251B;
+}
+
+#main {
+	position: relative;
+	padding: 0;
+	width: 1180px;
+	color: #5e5e5e;
+}
+
+#main strong {
+	color: #3e3e3e;
+}
+
+#main a {
+	color: #242424;
+}
+
+#main h2, #main h3, #main h4 {
+	color: #242424;
+}
+
+#main ul {
+	list-style: none;
+}
+
+#main ul li {
+	padding: 15px 0 15px 0;
+	border-top: dotted 1px #b3b3b3;
+}
+
+#main ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#main ul.imageList li {
+	padding: 15px 0 15px 0;
+}
+
+#nav {
+	position: absolute;
+	right: 40px;
+	height: 53px;
+	line-height: 53px;
+	top: 73px;
+}
+
+#nav a {
+	text-decoration: none;
+	text-transform: lowercase;
+	color: #f4eeea;
+	text-shadow: 0 1px 1px #32251B;
+	font-size: 1.2em;
+}
+
+#nav li {
+	margin: 0 1em 0 1em;
+}
+
+#nav ul {
+	list-style: none;
+}
+
+#nav ul li {
+	float: left;
+}
+
+#outer {
+	position: relative;
+	width: 1180px;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+#sidebar {
+	width: 240px;
+	float: left;
+	padding: 40px;
+	background: #32251b;
+	color: #e1d2c7;
+}
+
+#sidebar a {
+	color: #e2e0df;
+}
+
+#sidebar h2, #sidebar h3, #sidebar h4 {
+	color: #fff;
+}
+
+#sidebar ul {
+	list-style: none;
+}
+
+#sidebar ul li {
+	padding: 15px 0 15px 0;
+	border-top: dotted 1px #70665f;
+}
+
+#sidebar ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+.buttonRow {
+	margin-top: 20px;
+}
+
+.featureButton {
+	display: inline-block;
+	background: #32251b;
+	color: #fff !important;
+	padding: 10px 18px;
+	margin: 5px 8px 5px 0;
+	border-radius: 8px;
+	text-decoration: none;
+	font-family: Arvo, serif;
+}
+
+.featureButton:hover {
+	background: #1495ff;
+}
+
+.clubTable {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	background: #f7f7f7;
+}
+
+.clubTable th {
+	background: #32251b;
+	color: white;
+	padding: 10px;
+	text-align: left;
+}
+
+.clubTable td {
+	border: 1px solid #cfcfcf;
+	padding: 10px;
+}
