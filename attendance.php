@@ -30,16 +30,39 @@ $result = mysqli_query($conn, "
     JOIN events ON attendance.event_id = events.id
 ");
 ?>
+<link href="style.css" rel="stylesheet" type="text/css" />
 
-<a href="index.php">Home</a> |
-<a href="members.php">Members</a> |
-<a href="events.php">Events</a> |
-<a href="attendance.php">Attendance</a> |
-<a href="budget.php">Budget</a> |
-<a href="logout.php">Logout</a>
-<hr>
+<div id="bg">
+<div id="outer">
 
-<h2>Attendance</h2>
+<div id="header">
+    <div id="logo">
+        <h1><a href="index.php">Club System</a></h1>
+    </div>
+
+</div>
+
+<div id="main">
+
+<div id="sidebar">
+    <h3>Attendance Page</h3>
+
+    <p>
+        This page is used to track attendance.
+    </p>
+
+    <h3>Options</h3>
+
+    <ul class="linkedList">
+        <li class="first"><a href="index.php">Home</a></li>
+        <li><a href="members.php">Members</a></li>
+        <li><a href="events.php">Events</a></li>
+        <li><a href="budget.php">Budget</a></li>
+        <li class="last"><a href="logout.php">Logout</a></li>
+    </ul>
+</div>
+
+<div id="content">
 
 <form method="POST">
     Member:
@@ -61,8 +84,8 @@ $result = mysqli_query($conn, "
 
 <h3>Attendance List</h3>
 
-<table border="1" cellpadding="10">
-    <tr>
+<table class="clubTable">
+        <tr>
         <th>ID</th>
         <th>Member Name</th>
         <th>Event Name</th>
@@ -80,3 +103,10 @@ $result = mysqli_query($conn, "
         </tr>
     <?php } ?>
 </table>
+</div>
+
+<br class="clear" />
+
+</div>
+</div>
+</div>

@@ -34,16 +34,39 @@ $total_expense = $expense_row['total_expense'] ? $expense_row['total_expense'] :
 
 $current_balance = $total_income - $total_expense;
 ?>
+<link href="style.css" rel="stylesheet" type="text/css" />
 
-<a href="index.php">Home</a> |
-<a href="members.php">Members</a> |
-<a href="events.php">Events</a> |
-<a href="attendance.php">Attendance</a> |
-<a href="budget.php">Budget</a> |
-<a href="logout.php">Logout</a>
-<hr>
+<div id="bg">
+<div id="outer">
 
-<h2>Budget</h2>
+<div id="header">
+    <div id="logo">
+        <h1><a href="index.php">Club System</a></h1>
+    </div>
+
+</div>
+
+<div id="main">
+
+<div id="sidebar">
+    <h3>Budget Page</h3>
+
+    <p>
+        This page is used to manage the club budget.
+    </p>
+
+    <h3>Options</h3>
+
+    <ul class="linkedList">
+        <li class="first"><a href="index.php">Home</a></li>
+        <li><a href="members.php">Members</a></li>
+        <li><a href="events.php">Events</a></li>
+        <li><a href="attendance.php">Attendance</a></li>
+        <li class="last"><a href="logout.php">Logout</a></li>
+    </ul>
+</div>
+
+<div id="content">
 
 <form method="POST">
     Type:
@@ -68,7 +91,7 @@ $current_balance = $total_income - $total_expense;
 
 <h3>Budget List</h3>
 
-<table border="1" cellpadding="10">
+<table class="clubTable">
     <tr>
         <th>ID</th>
         <th>Type</th>
@@ -89,3 +112,10 @@ $current_balance = $total_income - $total_expense;
         </tr>
     <?php } ?>
 </table>
+</div>
+
+<br class="clear" />
+
+</div>
+</div>
+</div>

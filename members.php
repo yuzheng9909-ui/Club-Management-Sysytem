@@ -50,14 +50,40 @@ if (isset($_GET['edit'])) {
 
 $result = mysqli_query($conn, "SELECT * FROM members");
 ?>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
 
-<a href="index.php">Home</a> |
-<a href="members.php">Members</a> |
-<a href="events.php">Events</a> |
-<a href="attendance.php">Attendance</a> |
-<a href="budget.php">Budget</a> |
-<a href="logout.php">Logout</a>
-<hr>
+<div id="bg">
+<div id="outer">
+
+<div id="header">
+    <div id="logo">
+        <h1><a href="index.php">Club System</a></h1>
+    </div>
+
+</div>
+
+<div id="main">
+
+<div id="sidebar">
+    <h3>Members Page</h3>
+
+    <p>
+        This page is used to manage club members.
+    </p>
+
+    <h3>Options</h3>
+
+    <ul class="linkedList">
+        <li class="first"><a href="index.php">Home</a></li>
+        <li><a href="events.php">Events</a></li>
+        <li><a href="attendance.php">Attendance</a></li>
+        <li><a href="budget.php">Budget</a></li>
+        <li class="last"><a href="logout.php">Logout</a></li>
+    </ul>
+</div>
+
+<div id="content">
 
 <h2>Members</h2>
 
@@ -82,8 +108,8 @@ $result = mysqli_query($conn, "SELECT * FROM members");
 
 <h3>Member List</h3>
 
-<table border="1" cellpadding="10">
-    <tr>
+<table class="clubTable">
+        <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
@@ -104,3 +130,10 @@ $result = mysqli_query($conn, "SELECT * FROM members");
         </tr>
     <?php } ?>
 </table>
+</div>
+
+<br class="clear" />
+
+</div>
+</div>
+</div>

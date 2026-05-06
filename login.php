@@ -19,21 +19,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<link href="style.css" rel="stylesheet" type="text/css" />
 
-<h2>Login</h2>
+<div id="bg">
+    <div id="outer">
 
-<form method="POST">
-    Username:
-    <input type="text" name="username" required>
+        <div id="header">
+            <div id="logo">
+                <h1>
+                    <a href="login.php">Club System</a>
+                </h1>
+            </div>
+        </div>
 
-    <br><br>
+        <div id="main">
+            <div id="content">
+                <div id="box1" style="max-width:500px; margin:auto;">
 
-    Password:
-    <input type="password" name="password" required>
+                    <h2>Login</h2>
 
-    <br><br>
+                    <form method="POST">
+                        <p>Username</p>
+                        <input type="text" name="username" required style="width:100%; padding:10px; margin-bottom:20px;">
 
-    <button type="submit">Login</button>
-</form>
+                        <p>Password</p>
+                        <input type="password" name="password" required style="width:100%; padding:10px; margin-bottom:20px;">
 
-<p style="color:red;"><?php echo $error; ?></p>
+                        <button type="submit" class="featureButton">Login</button>
+                    </form>
+
+                    <p style="color:red;"><?php echo $error; ?></p>
+
+                </div>
+            </div>
+
+            <br class="clear" />
+        </div>
+    </div>
+</div>

@@ -34,7 +34,6 @@ br.clear {
 }
 
 h1,h2,h3,h4 {
-	text-transform: lowercase;
 	letter-spacing: -1px;
 }
 
@@ -179,7 +178,6 @@ ul {
 
 #nav a {
 	text-decoration: none;
-	text-transform: lowercase;
 	color: #f4eeea;
 	text-shadow: 0 1px 1px #32251B;
 	font-size: 1.2em;
@@ -270,4 +268,13 @@ ul {
 .clubTable td {
 	border: 1px solid #cfcfcf;
 	padding: 10px;
+}
+
+.clubTable td {
+	color: #222222;
+}
+
+.clubTable a {
+	color: #222222;
+	font-weight: bold;
 }

@@ -46,14 +46,39 @@ if (isset($_GET['edit'])) {
 
 $result = mysqli_query($conn, "SELECT * FROM events");
 ?>
+<link href="style.css" rel="stylesheet" type="text/css" />
 
-<a href="index.php">Home</a> |
-<a href="members.php">Members</a> |
-<a href="events.php">Events</a> |
-<a href="attendance.php">Attendance</a> |
-<a href="budget.php">Budget</a> |
-<a href="logout.php">Logout</a>
-<hr>
+<div id="bg">
+<div id="outer">
+
+<div id="header">
+    <div id="logo">
+        <h1><a href="index.php">Club System</a></h1>
+    </div>
+
+</div>
+
+<div id="main">
+
+<div id="sidebar">
+    <h3>Events Page</h3>
+
+    <p>
+        This page is used to manage club events.
+    </p>
+
+    <h3>Options</h3>
+
+    <ul class="linkedList">
+        <li class="first"><a href="index.php">Home</a></li>
+        <li><a href="members.php">Members</a></li>
+        <li><a href="attendance.php">Attendance</a></li>
+        <li><a href="budget.php">Budget</a></li>
+        <li class="last"><a href="logout.php">Logout</a></li>
+    </ul>
+</div>
+
+<div id="content">
 
 <h2>Events</h2>
 
@@ -75,8 +100,8 @@ $result = mysqli_query($conn, "SELECT * FROM events");
 
 <h3>Event List</h3>
 
-<table border="1" cellpadding="10">
-    <tr>
+<table class="clubTable">
+        <tr>
         <th>ID</th>
         <th>Event Name</th>
         <th>Event Date</th>
@@ -95,3 +120,10 @@ $result = mysqli_query($conn, "SELECT * FROM events");
         </tr>
     <?php } ?>
 </table>
+</div>
+
+<br class="clear" />
+
+</div>
+</div>
+</div>
